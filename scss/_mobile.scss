@@ -1,0 +1,100 @@
+// Widescreens
+@include mediaXL {
+    .projects {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+// Destops & Laptops
+@include mediaLg {
+    .projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+// Tablets & small Laptops
+@include mediaMd {
+    main {
+        align-items: center;
+        text-align: center;
+
+        .lg-heading {
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+    }
+
+    ul.menu-nav,
+    div.menu-branding {
+        float: none;
+        width: 100%;
+        min-height: 0;
+
+        &.show {
+            transform: translate3d(0,0,0);
+        }
+    }
+
+    .menu-nav {
+        height: 70vh;
+        transform: translate3d(-100%, 0, 0);
+        font-size: 1rem;
+    }
+
+    .menu-branding {
+        height: 30vh;
+        transform: translate3d(100%, 0, 0);
+
+        .portrait {
+            background: url('../img/portrait_small.jpg');
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    .about-info {
+        grid-template-areas: 
+        'profile'
+        'bio'
+        'job1'
+        'job2'
+        'job3';
+
+        grid-template-columns: 1fr;
+    }
+
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+// SmartPhones
+@include mediaSm {
+    main .lg-heading {
+        font-size: 4.5rem;
+        font-weight: 440;
+        letter-spacing: 2px;
+    }
+
+    main .sm-heading {
+        font-size: 1.1rem;
+    }
+    
+    main#home h1 {
+        margin-top: 10vh;
+    }
+
+    .bio #extra{
+        display: none;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .boxes div {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+}
